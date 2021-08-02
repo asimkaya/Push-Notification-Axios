@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
     margin: 5,
     justifyContent: 'space-between',
     flexDirection: 'row'
-    
   },
   text: {
     fontSize: 16,
