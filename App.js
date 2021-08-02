@@ -31,9 +31,10 @@ export default class App extends Component {
         <FlatList
           data={this.state.movies}
           renderItem={({item}) => (
-            <Pressable style={styles.button}>
-              <Text style={styles.text}>{item.name}</Text>
-            </Pressable>
+            <View style={styles.button}>
+              <Text style={styles.text}>{item.name} </Text>
+              <Text style={styles.text}>{item.expansion}</Text>
+            </View>
           )}
         />
       </View>
@@ -51,19 +52,21 @@ const styles = StyleSheet.create({
     height: 40,
   },
   button: {
-    alignItems: 'center',
     paddingVertical: 12,
     paddingHorizontal: 32,
-    borderRadius: 4,
+    borderRadius: 5,
     elevation: 3,
     backgroundColor: '#001636',
     margin: 5,
+    justifyContent: 'space-between',
+    flexDirection: 'row'
+    
   },
   text: {
     fontSize: 16,
     lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    color: 'white',
+    color: 'white'
   },
 });
