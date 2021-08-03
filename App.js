@@ -2,6 +2,8 @@ import React, {Component, useState} from 'react';
 import {Text, StyleSheet, View, FlatList, Pressable} from 'react-native';
 import axios from 'axios';
 import OneSignal from 'react-native-onesignal';
+import 'react-native-gesture-handler';
+import {NavigationContainer} from '@react-navigation/native';
 
 export default class App extends Component {
   constructor() {
@@ -27,17 +29,19 @@ export default class App extends Component {
 
   render() {
     return (
-      <View>
-        <FlatList
-          data={this.state.movies}
-          renderItem={({item}) => (
-            <View style={styles.button}>
-              <Text style={styles.text}>{item.name} </Text>
-              <Text style={styles.text}>{item.expansion}</Text>
-            </View>
-          )}
-        />
-      </View>
+      <NavigationContainer>
+        <View>
+          <FlatList
+            data={this.state.movies}
+            renderItem={({item}) => (
+              <View style={styles.button}>
+                <Text style={styles.text}>{item.name} </Text>
+                <Text style={styles.text}>{item.expansion}</Text>
+              </View>
+            )}
+          />
+        </View>
+      </NavigationContainer>
     );
   }
 }
@@ -59,13 +63,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#001636',
     margin: 5,
     justifyContent: 'space-between',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   text: {
     fontSize: 16,
     lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    color: 'white'
+    color: 'white',
   },
 });
