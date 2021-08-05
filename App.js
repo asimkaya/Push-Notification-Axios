@@ -22,7 +22,7 @@ function Home({navigation}) {
     OneSignal.setLogLevel(6, 0);
     OneSignal.setAppId('bc1fa09c-3c90-4c45-b289-20a3cc1892ad');
   }, [])
-
+console.log(movies)
   return (
     <View>
       <FlatList
@@ -33,6 +33,7 @@ function Home({navigation}) {
             onPress={() => {
               navigation.navigate('Detail', {
                 name: item.name,
+                type: item.army_type
               });
             }}>
             <Text style={styles.text}>{item.name} </Text>
