@@ -1,19 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Text, View} from 'react-native';
 
-export default class Detail extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'emre',
-    };
-  }
-  
-  render() {
-    return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
-    );
-  }
+function Detail({route, navigation}) {
+  const {name} = route.params;
+  return (
+    <View>
+      <Text>{name}</Text>
+    </View>
+  );
 }
+export default Detail;
