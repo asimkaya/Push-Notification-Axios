@@ -8,7 +8,7 @@ function Detail({route, navigation}) {
       <View style={styles.square}>
         <Text style={styles.header}>{name}</Text>
         <Image 
-          source={require('./assets/img/sword.png')} style={styles.sword} />
+          source={require('../assets/img/sword.png')} style={styles.sword} />
       </View>
       <Text style={styles.type}>Army Type</Text>
       <Text style={styles.army}>{type}</Text>
